@@ -1,10 +1,14 @@
-- 👋 Hi, I’m @Kulwindernatt
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+const {
+    Client,
+    Intents
+} = require('discord.js');
 
-<!---
-Kulwindernatt/Kulwindernatt is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+const bot = new Client({
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
+});
+
+bot.on('ready', () => {
+    console.log(`Bot ${bot.user.tag} is logged in!`);
+});
+
+bot.login('YOUR_BOT_TOKEN'); // Replace
